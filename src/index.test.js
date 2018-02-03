@@ -11,23 +11,15 @@ describe('Our first test', () => {
 
 
 describe ('index.html', () => {
-    it ('should say hello', (done) => {
+    it ('should have h1 that says users', (done) => {
         const index = fs.readFileSync('./src/index.html',"utf-8");
         jsdom.env(index, function(err, window) {
             const h1 = window.document.getElementsByTagName('h1')[0];
-            expect(h1.innerHTML).to.equal("Hello World!");
+            expect(h1.innerHTML).to.equal("Users");
             done();
             window.close();
         });
     });
 
-    it ('some other test', (done) => {
-        const index = fs.readFileSync('./src/index.html',"utf-8");
-        jsdom.env(index, function(err,window) {
-            const h2 = window.document.getElementsByTagName('h2')[0];
-            expect(h2.innerHTML).to.equal("Some other text");
-            done();
-            window.close();
-        });
-    })
+
 });
