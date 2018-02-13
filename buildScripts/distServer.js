@@ -13,15 +13,6 @@ app.use(express.static('dist'));
 
 
 
-app.get('/users',function(req, res) {
-    // hard coded for simplicity.  Pretend this hit a real database
-    res.json([
-        {"id": 1, "firstName" : "Bob", "lastName" : "Smith", "email": "bob@fake-email.com"},
-        {"id": 2, "firstName" : "Tammy", "lastName" : "Norton", "email" : "tnorton@fake-email.com"},
-        {"id": 3, "firstName" : "Tina", "lastName" : "Lee", "email" : "lee.tina@fake-email.com"}
-    ]);
-})
-
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
